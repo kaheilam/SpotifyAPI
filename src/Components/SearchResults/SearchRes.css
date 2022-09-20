@@ -1,0 +1,84 @@
+.SearchResults {
+    max-height: 950px;
+    overflow-y: scroll;
+    padding: .88rem;
+    margin: 3rem;
+    background-color: #1f1f1f;
+    box-shadow: 0 4px 2px 2px #494949;
+}
+
+.box {
+    margin: 3rem;
+    /*padding: 2rem;*/
+    position: relative;
+    width: 600px;
+    height: 900px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 500px;
+    height: 950px;
+    background: linear-gradient(0deg, transparent, #93d391, #235915);
+    transform-origin: bottom right;
+    animation: animate 10s linear infinite;
+}
+
+.box::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 500px;
+    height: 950px;
+    background: linear-gradient(0deg, transparent, #93d391,#235915);
+    transform-origin: bottom right;
+    animation: animate 10s linear infinite;
+    animation-delay: -5s;
+}
+
+@keyframes animate {
+    0% {
+        width: 110%;
+        transform: rotate(0deg);
+    }
+    100% {
+        width: 110%;
+        transform: rotate(360deg);
+    }
+
+}
+
+.res {
+    position: absolute;
+    inset: 2px;
+    border-radius: 8px;
+    background: #1f1f1f;
+    z-index: 10;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.box h2 {
+    border-bottom: 1px solid #6f6f6f;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width: 1020px) {
+    .SearchResults {
+        width: 90%;
+        margin-bottom: 2rem;
+    }
+}

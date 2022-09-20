@@ -1,0 +1,107 @@
+
+.Playlist {
+    margin: 3rem;
+    /*padding: 2rem;*/
+    position: relative;
+    width: 600px;
+    height: 900px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.Playlist::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 500px;
+    height: 950px;
+    background: linear-gradient(0deg, transparent, #93d391, #235915);
+    transform-origin: bottom right;
+    animation: animate 10s linear infinite;
+}
+
+.Playlist::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 500px;
+    height: 950px;
+    background: linear-gradient(0deg, transparent, #93d391,#235915);
+    transform-origin: bottom right;
+    animation: animate 10s linear infinite;
+    animation-delay: -5s;
+}
+
+@keyframes animate {
+    0% {
+        width: 110%;
+        transform: rotate(0deg);
+    }
+    100% {
+        width: 110%;
+        transform: rotate(360deg);
+    }
+
+}
+
+.res {
+    position: absolute;
+    inset: 2px;
+    border-radius: 8px;
+    background: #1f1f1f;
+    z-index: 10;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.Playlist input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #6f6f6f;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.55rem;
+    color: #baffb7;
+}
+
+
+.Playlist-save {
+    cursor: pointer;
+    width: 15rem;
+    padding: 1rem 0;
+    border-radius: 50px;
+    border-width: 0px;
+    /*margin-top: 1.27rem;*/
+    background-color: #51c72e;
+    text-align: center;
+    font-size: 15px;
+    transition: background-color .25s;
+    color: #fff;
+    font-weight: 500;
+}
+
+.Playlist-save:hover {
+    background-color: rgba(30, 101, 26, 0.7);
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.Playlist button {
+    margin: 20px 10px;
+}
+
+
+@media only screen and (max-width: 1020px) {
+    .Playlist {
+        width: 90%;
+    }
+}
